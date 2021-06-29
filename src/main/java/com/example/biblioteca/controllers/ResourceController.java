@@ -1,4 +1,4 @@
 package com.example.biblioteca.controllers;
 
-public class ControladorRecurso {
+public class ResourceController {
 }
