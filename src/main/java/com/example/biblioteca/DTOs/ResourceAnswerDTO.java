@@ -2,16 +2,16 @@ package com.example.biblioteca.DTOs;
 
 import java.time.LocalDate;
 
-public class AnswerDTO {
+public class ResourceAnswerDTO {
 
     private String answer;
     private Boolean status;
     private LocalDate date;
 
-    public AnswerDTO (){
+    public ResourceAnswerDTO(){
     }
 
-    public AnswerDTO (String answer, Boolean status, LocalDate date){
+    public ResourceAnswerDTO(String answer, Boolean status, LocalDate date){
         this.answer = answer;
         this.status = status;
         this.date = date;
