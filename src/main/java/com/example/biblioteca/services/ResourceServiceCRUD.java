@@ -1,7 +1,7 @@
 package com.example.biblioteca.services;
 
 import com.example.biblioteca.DTOs.ResourceDTO;
-import com.example.biblioteca.entities.Resource;
+import com.example.biblioteca.collections.Resource;
 import com.example.biblioteca.mappers.ResourceMapper;
 import com.example.biblioteca.repositories.ResourceRepository;
 import org.springframework.beans.factory.annotation.Autowired;

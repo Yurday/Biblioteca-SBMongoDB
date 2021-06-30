@@ -1,7 +1,7 @@
 package com.example.biblioteca.mappers;
 
 import com.example.biblioteca.DTOs.ResourceDTO;
-import com.example.biblioteca.entities.Resource;
+import com.example.biblioteca.collections.Resource;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -14,7 +14,7 @@ public class ResourceMapper {
         Resource resource = new Resource();
         resource.setId(resourceDTO.getId());
         resource.setResourceType(resourceDTO.getResourceType());
-        resource.setAreaTheme(resourceDTO.getAreaTheme());
+        resource.setAreaThemeId(resourceDTO.getAreaThemeId());
         resource.setStatus(resourceDTO.getStatus());
         resource.setName(resourceDTO.getName());
         resource.setDate(resourceDTO.getDate());
@@ -26,7 +26,7 @@ public class ResourceMapper {
         ResourceDTO resourceDTO = new ResourceDTO();
         resourceDTO.setId(collection.getId());
         resourceDTO.setResourceType(collection.getResourceType());
-        resourceDTO.setAreaTheme(collection.getAreaTheme());
+        resourceDTO.setAreaThemeId(collection.getAreaThemeId());
         resourceDTO.setStatus(collection.getStatus());
         resourceDTO.setName(collection.getName());
         resourceDTO.setDate(collection.getDate());

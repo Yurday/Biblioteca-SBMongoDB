@@ -1,4 +1,4 @@
-package com.example.biblioteca.entities;
+package com.example.biblioteca.collections;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,8 +10,8 @@ public class Resource {
 
     @Id
     private String id;
+    private String areaThemeId;
     private String resourceType;
-    private String areaTheme;
     private Boolean Status;
     private String name;
     private LocalDate date;
@@ -22,12 +22,12 @@ public class Resource {
         return id;
     }
 
-    public String getResourceType() {
-        return resourceType;
+    public String getAreaThemeId() {
+        return areaThemeId;
     }
 
-    public String getAreaTheme() {
-        return areaTheme;
+    public String getResourceType() {
+        return resourceType;
     }
 
     public Boolean getStatus() {
@@ -50,12 +50,12 @@ public class Resource {
         this.id = id;
     }
 
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
+    public void setAreaThemeId(String areaThemeId) {
+        this.areaThemeId = areaThemeId;
     }
 
-    public void setAreaTheme(String areaTheme) {
-        this.areaTheme = areaTheme;
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
     }
 
     public void setStatus(Boolean status) {

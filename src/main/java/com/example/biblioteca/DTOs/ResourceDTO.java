@@ -6,7 +6,7 @@ public class ResourceDTO {
 
     private String id;
     private String resourceType;
-    private String areaTheme;
+    private String areaThemeId;
     private Boolean Status;
     private String name;
     private LocalDate date;
@@ -16,6 +16,7 @@ public class ResourceDTO {
     }
 
     //Getter
+
     public String getId() {
         return id;
     }
@@ -24,8 +25,8 @@ public class ResourceDTO {
         return resourceType;
     }
 
-    public String getAreaTheme() {
-        return areaTheme;
+    public String getAreaThemeId() {
+        return areaThemeId;
     }
 
     public Boolean getStatus() {
@@ -40,6 +41,7 @@ public class ResourceDTO {
         return date;
     }
 
+
     //Setter
 
     public void setId(String id) {
@@ -50,8 +52,8 @@ public class ResourceDTO {
         this.resourceType = resourceType;
     }
 
-    public void setAreaTheme(String areaTheme) {
-        this.areaTheme = areaTheme;
+    public void setAreaThemeId(String areaThemeId) {
+        this.areaThemeId = areaThemeId;
     }
 
     public void setStatus(Boolean status) {
