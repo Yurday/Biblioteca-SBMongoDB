@@ -7,7 +7,7 @@ public class ResourceDTO {
     private String id;
     private String resourceType;
     private String areaThemeId;
-    private Boolean Status;
+    private Boolean status;
     private String name;
     private LocalDate date;
 
@@ -30,7 +30,7 @@ public class ResourceDTO {
     }
 
     public Boolean getStatus() {
-        return Status;
+        return status;
     }
 
     public String getName() {
@@ -57,7 +57,7 @@ public class ResourceDTO {
     }
 
     public void setStatus(Boolean status) {
-        Status = status;
+        this.status = status;
     }
 
     public void setName(String name) {
