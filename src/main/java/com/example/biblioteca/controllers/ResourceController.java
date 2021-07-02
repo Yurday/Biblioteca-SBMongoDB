@@ -21,7 +21,7 @@ public class ResourceController {
         return new ResponseEntity(resourceServiceCRUD.getById(id),HttpStatus.OK);
     }
 
-    @GetMapping()
+    @GetMapping("/lists")
     public ResponseEntity<List<ResourceDTO>> findAll(){
         return new ResponseEntity(resourceServiceCRUD.getAll(), HttpStatus.OK);
     }
