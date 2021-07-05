@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+mainframe **Modify resource**
+
+actor Administrator
+entity Resource
+database Biblioteca
+
+Administrator --> Resource: Consult resource
+Administrator --> Biblioteca: Modify resource by id
+Administrator <-- Biblioteca: Resource modification confirmation
+
+@enduml
+
+/*
+actor User
+entity Resource
+database Biblioteca
+actor Administrator
+User --> Administrator: Authentication Request
+User <-- Administrator: Authentication Response
+User --> Administrator: Another authentication Request
+Administrator <-- User: another authentication Response
+*/

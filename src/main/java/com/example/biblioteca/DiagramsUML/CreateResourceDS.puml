@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+mainframe **Create resource**
+
+actor Administrator
+entity Resource
+database Biblioteca
+
+Administrator --> Resource: Consult resource
+Administrator --> Biblioteca: Create new resource with areaThemeId, resourceType, Status and name
+Administrator <-- Biblioteca: Resource creation confirmation
+
+@enduml
