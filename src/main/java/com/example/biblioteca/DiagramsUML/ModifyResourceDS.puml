@@ -2,25 +2,30 @@
 'https://plantuml.com/sequence-diagram
 
 autonumber
+skinparam actorStyle awesome
 mainframe **Modify resource**
 
 actor Administrator
+control ResourceController
+participant "ResourceServiceCRUD" as ResourceServiceCRUD
+activate ResourceServiceCRUD #DarkSalmon
 entity Resource
+boundary ResourceRepository
 database Biblioteca
 
-Administrator --> Resource: Consult resource
-Administrator --> Biblioteca: Modify resource by id
-Administrator <-- Biblioteca: Resource modification confirmation
+Administrator --> ResourceController: Consult resources
+ResourceController --> ResourceServiceCRUD
+ResourceServiceCRUD --> Biblioteca: Get id of a resource
+Biblioteca --> ResourceServiceCRUD: Return id of a resource
+ResourceServiceCRUD --> ResourceController
+ResourceController --> Administrator
+Administrator --> ResourceController: Modify resource by id
+ResourceController --> ResourceServiceCRUD
+ResourceServiceCRUD --> Resource
+Resource --> ResourceRepository
+ResourceRepository --> Biblioteca
+Biblioteca --> ResourceServiceCRUD
+ResourceServiceCRUD --> ResourceController
+ResourceController --> Administrator: Resource modification confirmation
 
 @enduml
-
-/*
-actor User
-entity Resource
-database Biblioteca
-actor Administrator
-User --> Administrator: Authentication Request
-User <-- Administrator: Authentication Response
-User --> Administrator: Another authentication Request
-Administrator <-- User: another authentication Response
-*/

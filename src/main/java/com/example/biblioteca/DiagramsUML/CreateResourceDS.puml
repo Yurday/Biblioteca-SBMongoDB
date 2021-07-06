@@ -2,14 +2,24 @@
 'https://plantuml.com/sequence-diagram
 
 autonumber
+skinparam actorStyle awesome
 mainframe **Create resource**
 
 actor Administrator
+control ResourceController
+participant "ResourceServiceCRUD" as ResourceServiceCRUD
+activate ResourceServiceCRUD #DarkSalmon
 entity Resource
+boundary ResourceRepository
 database Biblioteca
 
-Administrator --> Resource: Consult resource
-Administrator --> Biblioteca: Create new resource with areaThemeId, resourceType, Status and name
-Administrator <-- Biblioteca: Resource creation confirmation
+Administrator --> ResourceController: Create new resource with areaThemeId, resourceType, Status, name and date
+ResourceController-->ResourceServiceCRUD
+ResourceServiceCRUD-->Resource
+Resource-->ResourceRepository
+ResourceRepository-->Biblioteca
+Biblioteca-->ResourceServiceCRUD
+ResourceServiceCRUD-->ResourceController
+Administrator <-- ResourceController: Resource creation confirmation
 
 @enduml
