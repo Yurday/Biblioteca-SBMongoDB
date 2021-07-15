@@ -7,18 +7,19 @@ mainframe **Create resource**
 
 actor Administrator
 control ResourceController
+entity Resource
 participant "ResourceServiceCRUD" as ResourceServiceCRUD
 activate ResourceServiceCRUD #DarkSalmon
-entity Resource
 boundary ResourceRepository
 database Biblioteca
 
 Administrator --> ResourceController: Create new resource with areaThemeId, resourceType, Status, name and date
-ResourceController-->ResourceServiceCRUD
-ResourceServiceCRUD-->Resource
-Resource-->ResourceRepository
+ResourceController --> Resource
+Resource-->ResourceServiceCRUD
+ResourceServiceCRUD-->ResourceRepository
 ResourceRepository-->Biblioteca
-Biblioteca-->ResourceServiceCRUD
+Biblioteca --> ResourceRepository
+ResourceRepository-->ResourceServiceCRUD
 ResourceServiceCRUD-->ResourceController
 Administrator <-- ResourceController: Resource creation confirmation
 

@@ -7,24 +7,27 @@ mainframe **Modify resource**
 
 actor Administrator
 control ResourceController
+entity Resource
 participant "ResourceServiceCRUD" as ResourceServiceCRUD
 activate ResourceServiceCRUD #DarkSalmon
-entity Resource
 boundary ResourceRepository
 database Biblioteca
 
 Administrator --> ResourceController: Consult resources
 ResourceController --> ResourceServiceCRUD
-ResourceServiceCRUD --> Biblioteca: Get id of a resource
-Biblioteca --> ResourceServiceCRUD: Return id of a resource
+ResourceServiceCRUD --> ResourceRepository: Get id of a resource
+ResourceRepository --> Biblioteca: Get id of a resource
+Biblioteca --> ResourceRepository: Return id of a resource
+ResourceRepository --> ResourceServiceCRUD
 ResourceServiceCRUD --> ResourceController
 ResourceController --> Administrator
 Administrator --> ResourceController: Modify resource by id
-ResourceController --> ResourceServiceCRUD
-ResourceServiceCRUD --> Resource
-Resource --> ResourceRepository
+ResourceController --> Resource
+Resource --> ResourceServiceCRUD
+ResourceServiceCRUD --> ResourceRepository
 ResourceRepository --> Biblioteca
-Biblioteca --> ResourceServiceCRUD
+Biblioteca --> ResourceRepository
+ResourceRepository --> ResourceServiceCRUD
 ResourceServiceCRUD --> ResourceController
 ResourceController --> Administrator: Resource modification confirmation
 
